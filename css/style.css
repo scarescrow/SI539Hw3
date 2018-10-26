@@ -140,11 +140,12 @@ h1 {
 
 .home-opening-gif {
 	text-align: right;
+	display: none;
 }
 
 .home-quote {
 	width:60%;
-	margin-top: 2%;
+	margin-top: 5vh;
 	font-family: 'Indie Flower', cursive;
 }
 
@@ -202,7 +203,7 @@ h1 {
 
 @media only screen and (min-width: 768px) {
 
-	/* Make navbar responsive when screen is mobile */
+	/* Make navbar expand on desktop */
 
 	.navbar-items, .navbar {
 		display: flex;
@@ -220,41 +221,8 @@ h1 {
 	.navbar-link-toggle {
 		display: none;
 	}
-}
 
-/*
-
-@media only screen and (max-width: 768px) {
-
-	.navbar-items, .navbar {
-		flex-direction: column;
-	}
-
-	.navbar-items {
-		display: none;
-	}
-
-	.navbar-items-right {
-		margin-left: 0px;
-	}
-
-	.navbar-link-toggle {
-		width: 2em;
-		align-self: flex-end;
+	.home-opening-gif {
 		display: initial;
-		position: absolute;
-		cursor: pointer;
-		padding-top: 2vh;
-	}
-
-	.navbar-link-toggle:hover {
-		color: #ccc;
-		background-color: #000000;
-	}
-
-	.navbar-toggle-show {
-		display: flex;
 	}
 }
-
-*/
