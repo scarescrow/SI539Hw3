@@ -15,7 +15,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 }
 
 p {
@@ -34,6 +34,10 @@ h1 {
 	margin: auto;
 }
 
+footer {
+	margin-top: 2vh;
+}
+
 /* Flexbox Navbar, common to all pages */
 
 .navbar {
@@ -46,9 +50,10 @@ h1 {
 
 .navbar-link {
 	padding: 8px;
-	text-align: center;
+	/* text-align: center; */
+	padding-left: 5vw;
 	margin-left: 3px;
-	width: 8em;
+	width: 100%;
 }
 
 .navbar-link:hover {
@@ -59,7 +64,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	display: none;
 }
 
@@ -72,7 +77,6 @@ h1 {
 	font-family: 'Charmonman', cursive;
 	font-weight: bold;
 	font-size: 1.5em;
-	padding-left: 2em;
 	padding-top: 2vh;
 }
 
@@ -116,17 +120,7 @@ h1 {
 
 .overlay-home {
 	height: 100vh;
-}
-
-.home-wrapper {
-	display: grid;
-	grid-template-rows: repeat(3, auto);
-	grid-template-columns: repeat(2, auto);
-	grid-gap: 2%;
-}
-
-.home-heading {
-	grid-column: 1 / span 2;
+	position: fixed;
 }
 
 .home-heading-text {
@@ -160,6 +154,10 @@ h1 {
 	font-size: 3em;
 }
 
+.ancient-chess-image {
+	width: 70%;
+}
+
 /* Specific styles for the Rules page */
 
 .rules-heading-text {
@@ -170,10 +168,7 @@ h1 {
 /* Specific styles for the Best Players Page */
 
 .players_wrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 30%);
-	grid-gap: 5%;
-	justify-content: center;
+	display: block;
 }
 
 .player_div {
@@ -182,14 +177,6 @@ h1 {
 	padding-bottom: 10px;
 	display: block;
 	width: 100%;
-}
-
-.player_div:hover {
-	background: green;
-}
-
-.player_div:last-child {
-	grid-column: 1 / span 3;
 }
 
 .players-heading-text {
@@ -201,6 +188,33 @@ h1 {
 	display: flex;
 }
 
+@media only screen and (orientation: landscape) {
+
+	/* Home page */
+
+	.home-opening-gif {
+		display: block;
+		margin-top: 5vh;
+		text-align: left;
+	}
+
+	.overlay-home {
+		height: auto;
+		width: 100vw;
+		position: static;
+	}
+
+	/* Players page */
+
+	.players_wrapper {
+		display: grid;
+		grid-template-columns: 45% 45%;
+		grid-gap: 5%;
+		justify-content: center;
+	}
+
+}
+
 @media only screen and (min-width: 768px) {
 
 	/* Make navbar expand on desktop */
@@ -210,8 +224,18 @@ h1 {
 		flex-direction: row;
 	}
 
-	.navbar {
-		display: flex;
+	.navbar-link {
+		width: 8em;
+		padding-left: 0;
+	}
+
+	.navbar-link i {
+		display: block;
+	}
+
+	.navbar-items {
+		align-content: flex-start;
+		text-align: center;
 	}
 
 	.navbar-items-right {
@@ -222,7 +246,45 @@ h1 {
 		display: none;
 	}
 
+	.home-wrapper {
+		display: grid;
+		grid-template-rows: repeat(3, auto);
+		grid-template-columns: repeat(2, auto);
+		grid-gap: 2%;
+	}
+
+	/* Home page  */
+	
+	.home-heading {
+		grid-column: 1 / span 2;
+	}
+
 	.home-opening-gif {
 		display: initial;
+		text-align: right;
 	}
+
+	.overlay-home {
+		height: 100vh;
+	}
+
+	/* History page  */
+
+	.ancient-chess-image {
+		width: 50%;
+	}
+
+	/* Players page  */
+
+	.players_wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 30%);
+		grid-gap: 5%;
+		justify-content: center;
+	}
+
+	.player_div:last-child {
+		grid-column: 1 / span 3;
+	}
+
 }
